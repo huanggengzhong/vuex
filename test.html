@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+// bad
+function divide1(a, b, option = false ) {
+  console.log(option);//true
+  
+}
+// good
+function divide2(a, b, { option = false }={}) {
+  //解释:第三个参数要传递对象,后面的={}代表第三个参数不传默认给一个空对象;里面option=false代表传递的对象有一个option属性,默认赋值为false
+  console.log(option);//true
+
+}
+// divide1(1,2,true);
+divide2(1,2,{option:true});
+
+
+</script>
