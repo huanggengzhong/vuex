@@ -15,8 +15,8 @@
     <p>{{ getTodoById(1).text }}</p>
     <button @click="increment">自增</button>
     <br>
-    <button @click="asyncIncrement">异步自增</button>
-    <button @click="changeMessage(9)">改变 message(实际同步提交mutation,这里用了常量大写,辅助函数里不用写参数,参数会自动传递)</button>
+    <button @click="asyncIncrement">异步自增(直接调用,没有使用辅助函数)</button>
+    <button @click="changeMessage(9)">改变 message(同步提交mutation,这里用了常量大写,辅助函数里不用写参数,参数会自动传递)</button>
   </div>
 </template>
 
@@ -40,7 +40,7 @@
         // })
         // 上面三行也可以写成对象形式
           this.$store.dispatch({
-            type:'increment',
+            type:'asyncincrement',
             num:2
           })
       },

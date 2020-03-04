@@ -4,9 +4,9 @@
     <p>获取全局的state:{{ count }}</p>
     <p>获取全局的state:{{ message }}</p>
     <p>获取全局的getter中的值:剩余任务数量：{{ remaining }}</p>
-    <button @click="increment">直接调用muttation方法 :自增</button>
+    <button @click="increment">直接调用muttation方法 :同步自增</button>
     <br>
-    <button @click="asyncIncrement({ num: 3 })"> 调用actions方法:异步自增</button>
+    <button @click="asyncIncrement({ num: 3 })"> 异步调用actions方法:异步自增,使用辅助函数,并且传递参数</button>
   </div>
 </template>
 
@@ -16,8 +16,8 @@
 
   export default {
     methods: {
-      ...mapActions({
-        asyncIncrement: 'increment'
+      ...mapActions({//参数不用写,自动传递num=3
+        asyncIncrement: 'asyncincrement'
       }),
       increment () {
         this.$store.commit({

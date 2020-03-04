@@ -32,7 +32,7 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    increment ({ commit }, { num = 1 }) {
+    asyncincrement ({ commit }, { num = 1 }) {//{ commit }本来是context对象的,这是解构出commit方法出来
       setTimeout(function () {
         commit({
           type: 'increment',
