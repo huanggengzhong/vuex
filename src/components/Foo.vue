@@ -16,7 +16,7 @@
     <button @click="increment">自增</button>
     <br>
     <button @click="asyncIncrement">异步自增</button>
-    <button @click="changeMessage">改变 message(实际同步提交mutation,这里用了常量大写)</button>
+    <button @click="changeMessage(9)">改变 message(实际同步提交mutation,这里用了常量大写,辅助函数里不用写参数,参数会自动传递)</button>
   </div>
 </template>
 

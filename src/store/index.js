@@ -26,8 +26,9 @@ const store = new Vuex.Store({
       //参数2要加大括号,是ES6配置项的写法,如果不加大括号参数二是{type: 'increment',num: 1},里面{num=1}意思是代表传递的参数是一个对象,属性num不传默认给一个1
       state.count += num
     },
-    [SOME_MUTATION] (state) {//官网有介绍:使用常量替代 Mutation 事件类型,使用外部mutation命名的语法糖
-      state.message = '你哈，世界'
+    [SOME_MUTATION] (state,num) {//官网有介绍:使用常量替代 Mutation 事件类型,使用外部mutation命名的语法糖
+      state.message = `你哈，世界!收到的参数是${num}`
+      // state.message = num
     }
   },
   actions: {
